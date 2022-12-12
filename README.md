@@ -1,4 +1,4 @@
-# Nelio
+# Neliö
 
 Työn aiheena korttipeli, Neliö. 
 Pelissä on aluksi pöydällä 9 korttia kuvapuoli ylöspäin, 
