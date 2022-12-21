@@ -92,7 +92,7 @@ class Logiikka:
     while True:
         oikein = 0
         if vertailu == 'isompi':
-            if Pakka.yksikortti(pakka) > poyta[pino-1][-1]:
+            if Pakka.yksikortti(pakka) > poyta[pino-1]:
                 oikein += 1
                 print("Oikein!")
                 if oikein == 3:
