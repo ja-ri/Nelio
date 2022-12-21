@@ -55,18 +55,20 @@ class Poyta(Pakka):
         self.pelit = []
         oikein = 0
 
+
+    def luoPoyta(self):
+        poyta = [[] for _ in range(9)]
+        for i in range(9):
+            jako = pakka.yksikortti()
+            poyta[i].append(jako)
+            pakka.kortit.pop(0)
+            print(i + 1)
+        a = (' ___' *  3 )
+        b = '   '.join('||||')
+        print('\n'.join((a, b, a, b, a, b, a, )))
+
 pakka = Pakka()
 pakka.sekoitaPakka()
 # pakka.show()
-
-def luoPoyta():
-    poyta = [[] for _ in range(9)]
-    for i in range(9):
-        jako = pakka.yksikortti()
-        poyta[i].append(jako)
-        pakka.kortit.pop(0)
-
-        poyta.show()
-
-
-luoPoyta()
+poyta = Poyta()
+poyta.luoPoyta()
