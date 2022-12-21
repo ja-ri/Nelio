@@ -8,11 +8,11 @@ class Pakka:
     def __init__(self):
         pass
 
-class Pelaaja:
+class Poyta:
     def __init__(self):
         pass
 
-class Poyta:
+class Logiikka:
     def __init__(self):
         pass
 
@@ -72,3 +72,44 @@ pakka.sekoitaPakka()
 # pakka.show()
 poyta = Poyta()
 poyta.luoPoyta()
+
+
+
+# 1. logiikka yhdelle korttipinolle, vertailu (isompi vai pienempi)
+# 2. laajennetaan yhdeksälle korttipinolle
+# 3. mihin pinoista kortti laitetaan --> vertailu
+
+
+class Logiikka:
+    pino = []
+    pino.append(Pakka.yksikortti(pakka))
+
+    vertailu = input("isompi vai pienempi?")
+    print ("Valinta:" + vertailu)
+
+
+
+    while True:
+        oikein = 0
+        if vertailu == 'isompi':
+            if Pakka.yksikortti(pakka) > poyta[pino-1][-1]:
+                oikein += 1
+                print("Oikein!")
+                if oikein == 3:
+                    print("Seuraavan pelaajan vuoro")
+                    oikein = 0
+                break
+            else:
+                print("Väärin! Juo " + str(len(poyta[pino-1])+1))
+                break
+        elif vertailu == 'pienempi':
+            if Pakka.yksikortti(pakka) < poyta[pino-1][-1]:
+                oikein += 1
+                print("Oikein!")
+                if oikein == 3:
+                    print("Seuraavan pelaajan vuoro")
+                    oikein = 0
+                break
+            else:
+                print("Väärin! Juo " + str(len(poyta[pino-1])+1))
+                break
