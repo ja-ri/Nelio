@@ -12,6 +12,10 @@ class Pelaaja:
     def __init__(self):
         pass
 
+class Poyta:
+    def __init__(self):
+        pass
+
 class Kortti:
     def __init__(self, maa, arvo):
         self.maa = maa
@@ -40,6 +44,29 @@ class Pakka:
             r = random.randint(0, i)
             self.kortit[i], self.kortit[r] = self.kortit[r], self.kortit[i]
 
+    def yksikortti(self):
+        nostetut = []
+        nostetut.insert(1, self.kortit.pop())
+        return nostetut
+
+
+class Poyta(Pakka):
+    def __init__(self):
+        self.pelit = []
+        oikein = 0
+
 pakka = Pakka()
 pakka.sekoitaPakka()
-pakka.show()
+# pakka.show()
+
+def luoPoyta():
+    poyta = [[] for _ in range(9)]
+    for i in range(9):
+        jako = pakka.yksikortti()
+        poyta[i].append(jako)
+        pakka.kortit.pop(0)
+
+        poyta.show()
+
+
+luoPoyta()
